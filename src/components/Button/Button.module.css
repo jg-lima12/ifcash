@@ -1,0 +1,79 @@
+.button {
+    transition: var(--trsBck), var(--trsTrf), color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-weight: bold;
+    gap: 5px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+
+.small {
+    padding: 5px 7px;
+    font-size: 10px;
+    border-radius: 7px !important;
+}
+
+.medium {
+    padding: 7px 10px;
+    border-radius: 10px;
+}
+
+.large {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.whiteTrp {
+    outline: 2px solid white;
+    outline-offset: -1px;
+    color: white;
+    background-color: transparent;
+}
+
+.blackTrp{
+    outline: 2px solid black;
+    outline-offset: -1px;
+    color: black;
+    background-color: transparent;
+}
+
+.greenTrp{
+    outline: 2px solid #31A010;
+    outline-offset: -1px;
+    color: #31A010;
+    background-color: transparent;
+}
+
+.whiteTrp:hover, .blackTrp:hover, .greenTrp:hover{
+    background-color: var(--eftHvrTrp);
+}
+
+.whiteBck {
+    background-color: #efefef;
+    color: #31A010;
+}
+
+.whiteBck:hover{
+    background-color: #31A010;
+    color: white;
+}
+
+.greenBck{
+    background-color: #31A010;
+    color: white;
+}
+
+.greenBck:hover{
+    background-color: #efefef;
+    color: #31A010;
+}

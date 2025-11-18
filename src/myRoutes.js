@@ -1,8 +1,11 @@
 import React from 'react'
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import Home from './screens/home';
-import Login from './screens/login';
+import NavBar from './layout/NavBar/NavBar';
+
+import Home from './screens/Home/Home';
+import Login from './screens/Login/Login';
+
 
 export default function MyRoutes() {
     return (
@@ -11,6 +14,7 @@ export default function MyRoutes() {
                 <Route path="/" element={<Home/>} exact/>
                 <Route path='/login' element={<Login/>} exact/>
             </Routes>
+            <NavBar />
         </BrowserRouter>
     )
 }

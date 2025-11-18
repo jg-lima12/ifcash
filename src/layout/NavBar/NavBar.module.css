@@ -1,0 +1,69 @@
+.header{
+    width: 100%;
+    padding: 0.5vw 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #31A010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+}
+
+.cardLogo{
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: var(--trsBck);
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.cardLogo:hover{
+    background-color: var(--eftHvrTrp);
+    cursor: pointer;
+}
+
+.cardLogo img{
+    height: 40px;
+}
+
+
+.cardLogo h1{
+    font-family: 'Kanit';
+    letter-spacing: 2px;
+    font-weight: 630;
+}
+
+.options{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.eyes{
+    color: white;
+    font-size: 37px;
+}
+
+.icon{
+    font-size: 47px;
+    color: white;
+    transition: var(--trsBck), var(--trsTrf);
+    border-radius: 100%;
+}
+
+.icon:hover{
+    background-color: var(--eftHvrTrp);
+    cursor: pointer;
+}
+
+.icon:active{
+    transform: scale(0.9);
+}

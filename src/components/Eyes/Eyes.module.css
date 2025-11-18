@@ -1,0 +1,9 @@
+.eyes{
+    transition: var(--trsBck);
+    border-radius: 10px;
+}
+
+.eyes:hover{
+    background-color: var(--eftHvrTrp);
+    cursor: pointer;
+}

@@ -7,6 +7,8 @@ import Home from './screens/Home/Home';
 import Login from './screens/Login/Login';
 import User from './screens/User/User'
 import Help from './screens/Help/Help';
+import AddRenda from './screens/AddRenda/AddRenda';
+
 
 
 export default function MyRoutes() {
@@ -17,6 +19,7 @@ export default function MyRoutes() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/user' element={<User />} />
                 <Route path='/help' element={<Help />} />
+                <Route path='/register-income' element={<AddRenda />} />
             </Routes>
             <NavBar />
         </BrowserRouter>

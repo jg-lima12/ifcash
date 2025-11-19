@@ -4,11 +4,15 @@ import Button from '../../components/Button/Button'
 
 import { FaRegPlusSquare } from "react-icons/fa";
 
+import { Link } from 'react-router-dom';
+import clsx from 'clsx';
+
 
 
 export default function Home() {
 
   let valueBalance = 20.1
+
 
   return (
     <>
@@ -17,7 +21,7 @@ export default function Home() {
           <div className={styles.cardGraphic}>
             <div className={styles.buttonGraphic}>
               <Button size='large' version='greenBck'>Gráfico</Button>
-              <Button size='large' version='greenBck'>Histótico</Button>
+              <Button size='large' version='greenBck'>Histórico</Button>
             </div>
             <div className="graphic"></div>
           </div>
@@ -28,7 +32,7 @@ export default function Home() {
               <span className={styles.span}>Saldo Atual</span>
               <span>R$ {valueBalance}</span>
             </div>
-            <FaRegPlusSquare className={styles.iconPlus} />
+            <Link className='link' to='/register-income'><FaRegPlusSquare className={styles.iconPlus} /></Link>
           </div>
         </div>
       </section>

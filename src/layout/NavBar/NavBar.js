@@ -7,6 +7,7 @@ import Eyes from '../../components/Eyes/Eyes';
 
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { FaRegUser } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 export default function NavBar() {
@@ -15,17 +16,22 @@ export default function NavBar() {
             <header className={styles.header}>
                 <div className={styles.container}>
                     <div className={styles.card}>
-                        <div className={styles.cardLogo}>
+                        <Link to='/' title='Página Inicial' className={styles.cardLogo}>
                             <img src={logo} alt="Logo IF" />
                             <h1>IfCash</h1>
-                        </div>
+                        </Link>
                         <div className={styles.options}>
-                            <IoIosHelpCircleOutline className={styles.icon} />
+                            <Link to='/help' >
+                                <IoIosHelpCircleOutline className={styles.icon} />
+                            </Link>
                             <Eyes className={styles.eyes} />
-                            <Button size='large'>
-                                <span>USUÁRIO</span>
-                                <FaRegUser />
-                            </Button>
+                            <Link to='/user' >
+                                <Button size='large' >
+                                    <span>USUÁRIO</span>
+                                    <FaRegUser />
+                                </Button>
+                            </Link>
+
                         </div>
                     </div>
                 </div>

@@ -32,7 +32,7 @@ export default function Home() {
               <span className={styles.span}>Saldo Atual</span>
               <span>R$ {valueBalance}</span>
             </div>
-            <Link className='link' to='/register-income'><FaRegPlusSquare className={styles.iconPlus} /></Link>
+            <Link className='link' to='/register-income'><FaRegPlusSquare className='iconPlus' /></Link>
           </div>
         </div>
       </section>

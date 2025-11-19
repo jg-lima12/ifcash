@@ -5,7 +5,7 @@
   --eftHvrTrp: #bbbbbb63;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -20,11 +20,28 @@ html,
   background-color: #18241A;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.link{
+.link {
   text-decoration: none;
   color: none;
+}
+
+.iconPlus {
+  color: white;
+  margin-left: 5px;
+  font-size: 50px;
+  border-radius: 7px;
+  transition: var(--trsTrf), var(--trsBck);
+}
+
+.iconPlus:hover {
+  background-color: var(--eftHvrTrp);
+  cursor: pointer;
+}
+
+.iconPlus:active {
+  transform: scale(0.9);
 }

@@ -1,0 +1,36 @@
+.cardInput{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input {
+    border: 2px solid #31A010;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 15px;
+    width: 25vw;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+}
+
+.input:focus{
+    outline: none;
+    border-color: #60e039;
+}
+
+.input::placeholder{
+    color: #31A010;
+}
+
+.input:focus::placeholder{
+    color: #60e039;
+    transition: color 0.3s ease;
+}
+
+.label{
+    font-size: 20px;
+    color: white;
+    margin-left: 4px;
+    font-weight: bold;
+}

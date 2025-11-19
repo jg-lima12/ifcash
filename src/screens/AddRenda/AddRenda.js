@@ -13,8 +13,9 @@ export default function AddRenda() {
     const [valueSpent, setValueSpent] = useState(1.99)
 
 
-    const [showIncome, setShowIncome] = useState(false)
-    const [showSpent, setShowSpent] = useState(false)
+    const [showIncome, setShowIncome] = useState(true)
+    const [showSpent, setShowSpent] = useState(true)
+    const [showOpacity, setShowOpacity] = useState(true)
 
     return (
         <>
@@ -32,7 +33,7 @@ export default function AddRenda() {
 
                             </div>
                             <div className={styles.buttonListAdd}>
-                                 <FaRegPlusSquare onClick={() => setShowIncome(true)} className={clsx('iconPlus', styles.iconPlus)} />
+                                <FaRegPlusSquare onClick={() => setShowIncome(true)} className={clsx('iconPlus', styles.iconPlus)} />
                             </div>
                         </div>
                     </div>
@@ -50,14 +51,17 @@ export default function AddRenda() {
 
                             </div>
                             <div className={styles.buttonListAdd}>
-                                <FaRegPlusSquare onClick={() => setShowSpent(true)} className={clsx('iconPlus', styles.iconPlus)} />
+                                <FaRegPlusSquare onClick={() => {
+                                    setShowSpent(true)
+                                    setTimeout(() => setShowOpacity(true), 100)
+                                }} className={clsx('iconPlus', styles.iconPlus)} />
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-            <PopUpIncome setShowIncome={setShowIncome} showIcome={showIncome}/>
-            <PopUpSpent setShowSpent={setShowSpent} showSpent={showSpent}/>
+            <PopUpIncome setShowIncome={setShowIncome} showIcome={showIncome} />
+            <PopUpSpent opacity={showOpacity} setOpacity={setShowOpacity} setShowSpent={setShowSpent} showSpent={showSpent} />
         </>
     )
 }

@@ -25,7 +25,7 @@ export default function NavBar() {
                                 <IoIosHelpCircleOutline className={styles.icon} />
                             </Link>
                             <Eyes className={styles.eyes} />
-                            <Link to='/user' >
+                            <Link to='/login' >
                                 <Button size='large' >
                                     <span>USUÁRIO</span>
                                     <FaRegUser />

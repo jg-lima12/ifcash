@@ -11,7 +11,7 @@ import clsx from 'clsx';
 
 export default function Home() {
 
-  let valueBalance = 20.1
+  let valueBalance = 100.99
 
 
   return (

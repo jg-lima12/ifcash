@@ -19,10 +19,6 @@
     border-color: #60e039;
 }
 
-.input::placeholder{
-    color: #31A010;
-}
-
 .input:focus::placeholder{
     color: #60e039;
     transition: color 0.3s ease;
@@ -33,4 +29,5 @@
     color: white;
     margin-left: 4px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }

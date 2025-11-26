@@ -1,0 +1,10 @@
+.bellTrp, .bellBck{
+    cursor: pointer;
+    padding: 3px;
+    transition: var(--trsBck);
+    border-radius: 5px;
+}
+
+.bellBck:hover, .bellTrp:hover{
+    background-color: #7e7e7e;
+}

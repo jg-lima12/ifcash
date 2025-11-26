@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.342);
@@ -13,24 +13,122 @@
     transition: opacity 0.3s ease;
 }
 
-.none{
+.none {
     display: none !important;
 }
 
-.opacity{
+.opacity {
     opacity: 0;
 }
 
-.containerPopUp{
+.containerPopUp {
     width: 30vw;
     padding: 40px;
     background-color: #595959;
     border-radius: 30px;
+    position: relative;
 }
 
-.cardPopUp{
+.cardPopUp {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+.saleIncome {
+    display: flex;
+    flex-direction: column;
+}
+
+.saleIncome span {
+    color: white;
+    font-weight: bold;
+}
+
+.saleIncome>span {
+    font-size: 20px;
+    margin-left: 4px;
+
+}
+
+.saleIncome .valueFont {
+    margin-top: -10px;
+}
+
+.saleIncome .valueFont span {
+    font-size: 80px;
+    margin-right: 10px;
+}
+
+.titleCategoria {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 4px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.viewAlert {
+    pointer-events: all !important;
+}
+
+.alertCorpo {
+    margin-left: 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    pointer-events: none;
+}
+
+.addLimit {
+    font-weight: bold;
+    color: #a0a0a0;
+}
+
+.addLimit>span {
+    margin-left: 3px;
+    transition: color 0.3s ease;
+}
+
+.addLimit .valueLimit {
+    display: flex;
+    align-items: flex-end;
+}
+
+.addLimit .valueLimit span {
+    font-size: 30px;
+    margin-right: 5px;
+    transition: color 0.3s ease;
+}
+
+
+.arrowIcon {
+    color: #3ab914ff;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    transition: var(--trsBck), var(--trsTrf);
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.iconPincel {
+    transition: var(--trsBck), var(--trsTrf), color 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.iconPincel:hover,
+.arrowIcon:hover {
+    background-color: #7e7e7e;
+}
+
+.iconPincel:active,
+.arrowIcon:active {
+    transform: scale(0.9);
+}

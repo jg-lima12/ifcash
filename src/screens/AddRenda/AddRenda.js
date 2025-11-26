@@ -13,9 +13,12 @@ export default function AddRenda() {
     const [valueSpent, setValueSpent] = useState(1.99)
 
 
-    const [showIncome, setShowIncome] = useState(true)
-    const [showSpent, setShowSpent] = useState(true)
-    const [showOpacity, setShowOpacity] = useState(true)
+    const [showIncome, setShowIncome] = useState(false)
+    const [showOpacityIncome, setShowOpacityIncome] = useState(false)
+
+    const [showSpent, setShowSpent] = useState(false)
+    const [showOpacitySpent, setShowOpacitySpent] = useState(false)
+
 
     return (
         <>
@@ -33,7 +36,10 @@ export default function AddRenda() {
 
                             </div>
                             <div className={styles.buttonListAdd}>
-                                <FaRegPlusSquare onClick={() => setShowIncome(true)} className={clsx('iconPlus', styles.iconPlus)} />
+                                <FaRegPlusSquare onClick={() => {
+                                    setShowIncome(true)
+                                    setTimeout(() => setShowOpacityIncome(true), 100)
+                                }} className={clsx('iconPlus', styles.iconPlus)} />
                             </div>
                         </div>
                     </div>
@@ -53,15 +59,15 @@ export default function AddRenda() {
                             <div className={styles.buttonListAdd}>
                                 <FaRegPlusSquare onClick={() => {
                                     setShowSpent(true)
-                                    setTimeout(() => setShowOpacity(true), 100)
+                                    setTimeout(() => setShowOpacitySpent(true), 100)
                                 }} className={clsx('iconPlus', styles.iconPlus)} />
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
-            <PopUpIncome setShowIncome={setShowIncome} showIcome={showIncome} />
-            <PopUpSpent opacity={showOpacity} setOpacity={setShowOpacity} setShowSpent={setShowSpent} showSpent={showSpent} />
+            <PopUpIncome opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
+            <PopUpSpent opacity={showOpacitySpent} setOpacity={setShowOpacitySpent} setShowSpent={setShowSpent} showSpent={showSpent} />
         </>
     )
 }

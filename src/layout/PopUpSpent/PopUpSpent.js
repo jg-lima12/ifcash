@@ -33,10 +33,10 @@ export default function PopUpSpent({ opacity, setOpacity, setShowSpent, showSpen
                     <div className={styles.containerPopUp}>
                         <FaArrowLeft className={styles.arrowIcon} onClick={offPopUp} />
                         <div className={styles.cardPopUp}>
-                            <div className={styles.inputRenda}>
+                            <div className={styles.inputGasto}>
                                 <Input>Fonte de Gasto:</Input>
                             </div>
-                            <div className={styles.saleIncome}>
+                            <div className={styles.saleSpent}>
                                 <span>Ganho Líquido:</span>
                                 <div className={styles.valueFont}>
                                     <span>R${valueFont}</span>
@@ -44,20 +44,18 @@ export default function PopUpSpent({ opacity, setOpacity, setShowSpent, showSpen
                                 </div>
                             </div>
                             <div className={styles.categoria}>
-                                <div className={styles.titleCategoria}>
-                                    <span>Categoria</span>
-                                </div>
-                                <form action="">
+                                <span className={styles.titleCategoria}>Categoria</span>
+                                <form className={styles.form}>
                                     <label>
-                                        <input type="radio" />
+                                        <input type="radio" name='categoria' value='alimentacao' />
                                         Alimentação
                                     </label>
                                     <label>
-                                        <input type="radio" />
+                                        <input type="radio" name='categoria' value='diversao' />
                                         Diversão
                                     </label>
                                     <label>
-                                        <input type="radio" />
+                                        <input type="radio" name='categoria' value='transporte' />
                                         Trasporte
                                     </label>
                                 </form>

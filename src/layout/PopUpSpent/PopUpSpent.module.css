@@ -35,27 +35,27 @@
     gap: 20px;
 }
 
-.saleIncome {
+.saleSpent {
     display: flex;
     flex-direction: column;
 }
 
-.saleIncome span {
+.saleSpent span {
     color: white;
     font-weight: bold;
 }
 
-.saleIncome>span {
+.saleSpent>span {
     font-size: 20px;
     margin-left: 4px;
 
 }
 
-.saleIncome .valueFont {
+.saleSpent .valueFont {
     margin-top: -10px;
 }
 
-.saleIncome .valueFont span {
+.saleSpent .valueFont span {
     font-size: 80px;
     margin-right: 10px;
 }
@@ -71,40 +71,24 @@
     margin-top: -10px;
 }
 
-.viewAlert {
-    pointer-events: all !important;
-}
-
-.alertCorpo {
-    margin-left: 15px;
-    margin-top: 10px;
+.form{
+    color: white;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    pointer-events: none;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
-.addLimit {
-    font-weight: bold;
-    color: #a0a0a0;
-}
-
-.addLimit>span {
-    margin-left: 3px;
-    transition: color 0.3s ease;
-}
-
-.addLimit .valueLimit {
+.form label{
+    width: fit-content;
     display: flex;
-    align-items: flex-end;
+    gap: 4px;
 }
 
-.addLimit .valueLimit span {
-    font-size: 30px;
-    margin-right: 5px;
-    transition: color 0.3s ease;
+.form label input{
+    background-color: transparent;
 }
-
 
 .arrowIcon {
     color: #3ab914ff;

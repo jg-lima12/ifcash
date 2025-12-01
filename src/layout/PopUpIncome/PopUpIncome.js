@@ -19,6 +19,7 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
 
     const [valueFont, setValueFont] = useState(99.99)
     const [valueLimit, setValueLimit] = useState(99.99)
+    const  [valueInput, setValueInput] = useState('')
 
     const [viewAlert, setViewAlert] = useState(false)
 
@@ -36,6 +37,10 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
 
     function showAlert() {
         setViewAlert(!viewAlert)
+    }
+
+    function getValue(){
+        
     }
 
     useEffect((() => {
@@ -56,7 +61,7 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
                         <FaArrowLeft className={styles.arrowIcon} onClick={offPopUp} />
                         <div className={styles.cardPopUp}>
                             <div className={styles.inputRenda}>
-                                <Input>Fonte de Renda:</Input>
+                                <Input value={valueInput} onChange={(e) => setValueInput(e.target.value)} >Fonte de Renda:</Input>
                             </div>
                             <div className={styles.saleIncome}>
                                 <span>Ganho Líquido:</span>
@@ -82,7 +87,7 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
                                 </div>
                             </div>
                             <div className={styles.buttonAdd}>
-                                <Button version='greenBck' size='small'>
+                                <Button onClick={getValue} version='greenBck' size='small'>
                                     <FaPlus style={{ fontSize: '20px' }} />
                                     Adicionar Renda
                                 </Button>

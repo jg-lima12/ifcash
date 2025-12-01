@@ -7,6 +7,8 @@ import clsx from 'clsx';
 import PopUpSpent from '../../layout/PopUpSpent/PopUpSpent';
 import PopUpIncome from '../../layout/PopUpIncome/PopUpIncome';
 
+import CardIncome from '../../layout/CardIncome/CardIncome';
+
 export default function AddRenda() {
 
     const [valueIcome, setValueIcome] = useState(10.99)
@@ -33,7 +35,10 @@ export default function AddRenda() {
                         </div>
                         <div className={styles.listIcome}>
                             <div className={styles.listAddIcome}>
-
+                                <CardIncome />
+                                <CardIncome />
+                                <CardIncome />
+                                <CardIncome />
                             </div>
                             <div className={styles.buttonListAdd}>
                                 <FaRegPlusSquare onClick={() => {

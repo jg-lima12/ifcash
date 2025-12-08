@@ -11,15 +11,18 @@ import { LuPencil } from "react-icons/lu";
 
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
+import { useTitleContext } from '../../hooks/useIncomeContext';
 
 
 export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIncome }) {
 
     const classContainer = clsx(styles.container, !showIncome && styles.none, !opacity && styles.opacity)
 
+    const {setTitle} = useTitleContext()
+
     const [valueFont, setValueFont] = useState(99.99)
     const [valueLimit, setValueLimit] = useState(99.99)
-    const  [valueInput, setValueInput] = useState('')
+    const [valueInput, setValueInput] = useState('')
 
     const [viewAlert, setViewAlert] = useState(false)
 
@@ -39,8 +42,10 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
         setViewAlert(!viewAlert)
     }
 
-    function getValue(){
-        
+    function getData() {
+        setTitle(valueInput)
+        setOpacity(false)
+        setTimeout(() => setShowIncome(false), 100)
     }
 
     useEffect((() => {
@@ -52,6 +57,7 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
             setColorWhite('#a0a0a0')
         }
     }), [viewAlert])
+
 
     return (
         <>
@@ -87,7 +93,7 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
                                 </div>
                             </div>
                             <div className={styles.buttonAdd}>
-                                <Button onClick={getValue} version='greenBck' size='small'>
+                                <Button onClick={getData} version='greenBck' size='small'>
                                     <FaPlus style={{ fontSize: '20px' }} />
                                     Adicionar Renda
                                 </Button>

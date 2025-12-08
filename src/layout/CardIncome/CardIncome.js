@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './CardIncome.module.css'
+import { useTitleContext } from '../../hooks/useIncomeContext';
 
 import { FaRegTrashCan } from "react-icons/fa6";
 
@@ -7,7 +8,9 @@ import { FaRegTrashCan } from "react-icons/fa6";
 export default function CardIncome() {
 
     const [number, setNumber] = useState(999.99)
-    const [title, setTitle] = useState('Não declarado')
+
+    const {title} = useTitleContext()
+    
 
 
     return (

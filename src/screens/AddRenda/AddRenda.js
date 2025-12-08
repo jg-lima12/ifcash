@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './AddRenda.module.css'
+import { TitleProvider } from '../../context/IncomeContext/IncomeProvider';
 
 import { FaRegPlusSquare } from "react-icons/fa";
 import clsx from 'clsx';
@@ -35,10 +36,14 @@ export default function AddRenda() {
                         </div>
                         <div className={styles.listIcome}>
                             <div className={styles.listAddIcome}>
-                                <CardIncome />
-                                <CardIncome />
-                                <CardIncome />
-                                <CardIncome />
+                                <TitleProvider>
+                                    <CardIncome />
+                                    <CardIncome />
+                                    <CardIncome />
+                                    <CardIncome />
+                                    <PopUpIncome opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
+                                </TitleProvider>
+
                             </div>
                             <div className={styles.buttonListAdd}>
                                 <FaRegPlusSquare onClick={() => {
@@ -71,7 +76,6 @@ export default function AddRenda() {
                     </div>
                 </section>
             </div>
-            <PopUpIncome opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
             <PopUpSpent opacity={showOpacitySpent} setOpacity={setShowOpacitySpent} setShowSpent={setShowSpent} showSpent={showSpent} />
         </>
     )

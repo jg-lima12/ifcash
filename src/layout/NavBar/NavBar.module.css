@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     color: white;
-    transition: var(--trsBck);
+    transition: var(--trsBck), var(--trsTrf);
     padding: 5px 10px;
     border-radius: 15px;
 }
@@ -29,6 +29,10 @@
 .cardLogo:hover{
     background-color: var(--eftHvrTrp);
     cursor: pointer;
+}
+
+.cardLogo:active{
+    transform: scale(0.9);
 }
 
 .cardLogo img{

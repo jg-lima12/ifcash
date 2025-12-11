@@ -12,9 +12,12 @@ import CardIncome from '../../layout/CardIncome/CardIncome';
 
 export default function AddRenda() {
 
+    const [vetor, setVetor] = useState([])
+
     const [valueIcome, setValueIcome] = useState(10.99)
     const [valueSpent, setValueSpent] = useState(1.99)
 
+    const [valueCardIncome, setValueCardIncome] = useState()
 
     const [showIncome, setShowIncome] = useState(false)
     const [showOpacityIncome, setShowOpacityIncome] = useState(false)
@@ -36,13 +39,12 @@ export default function AddRenda() {
                         </div>
                         <div className={styles.listIcome}>
                             <div className={styles.listAddIcome}>
-                                <TitleProvider>
-                                    <CardIncome />
-                                    <CardIncome />
-                                    <CardIncome />
-                                    <CardIncome />
-                                    <PopUpIncome opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
-                                </TitleProvider>
+                                {vetor.map((item, index) => (
+                                    <CardIncome key={index} type={item.type} value={item.value} />
+                                ))}
+
+                                <PopUpIncome vetor={vetor} setVetor={setVetor} setValue={setValueCardIncome} opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
+
 
                             </div>
                             <div className={styles.buttonListAdd}>

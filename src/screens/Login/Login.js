@@ -4,6 +4,7 @@ import styles from './Login.module.css'
 
 import { FaRegUser } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
+import clsx from 'clsx';
 
 
 export default function Login() {
@@ -35,23 +36,23 @@ export default function Login() {
         <div className={styles.card}>
           <span>Login</span>
           <div className={styles.acardInput}>
-            <input 
+            <input className={clsx(registration != '' && styles.inputFocus)}
             id='registration' 
             type="text"
             value={registration}
             onChange={(e) => setRegistration(e.target.value)} />
-            <label htmlFor="registration">
+            <label className={clsx(registration != '' && styles.labelFocus)} htmlFor="registration">
               <FaRegUser />
               Matricula
             </label>
           </div>
           <div className={styles.bcardInput}>
-            <input 
+            <input className={password != '' && styles.inputFocus}
             id='password' 
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)} />
-            <label htmlFor="password">
+            <label className={password != '' && styles.labelFocus} htmlFor="password">
               <RiLockPasswordLine />
               Senha
             </label>

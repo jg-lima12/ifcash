@@ -14,11 +14,9 @@ import { useEffect, useState } from 'react';
 import { useTitleContext } from '../../hooks/useIncomeContext';
 
 
-export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIncome }) {
+export default function PopUpIncome({ vetor, setVetor, setValue, opacity, setOpacity, setShowIncome, showIncome }) {
 
     const classContainer = clsx(styles.container, !showIncome && styles.none, !opacity && styles.opacity)
-
-    const {setTitle} = useTitleContext()
 
     const [valueFont, setValueFont] = useState(99.99)
     const [valueLimit, setValueLimit] = useState(99.99)
@@ -43,7 +41,12 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
     }
 
     function getData() {
-        setTitle(valueInput)
+        setVetor([
+            ...vetor, {
+                type: valueInput
+            }])
+        setValueInput('')
+
         setOpacity(false)
         setTimeout(() => setShowIncome(false), 100)
     }
@@ -102,6 +105,7 @@ export default function PopUpIncome({ opacity, setOpacity, setShowIncome, showIn
                     </div>
                 </div>
             </div>
+            {console.log(valueInput)}
         </>
     )
 }

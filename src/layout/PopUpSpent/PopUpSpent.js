@@ -11,11 +11,13 @@ import clsx from 'clsx';
 import { use, useState } from 'react';
 
 
-export default function PopUpSpent({ opacity, setOpacity, setShowSpent, showSpent }) {
+export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setShowSpent, showSpent }) {
 
     const classContainer = clsx(styles.container, !showSpent && styles.none, !opacity && styles.opacity)
 
     const [valueFont, setValueFont] = useState(99.99)
+    const [valueInput, setValueInput] = useState('')
+    const [valueDate, setValueDate] = useState('')
 
     function offPopUp() {
         setOpacity(false)
@@ -26,6 +28,19 @@ export default function PopUpSpent({ opacity, setOpacity, setShowSpent, showSpen
 
     }
 
+    function getData() {
+        setVetor([
+            ...vetor,
+            {
+                type: valueInput,
+                date: valueDate,
+                value: valueFont
+            }
+        ])
+
+        offPopUp()
+    }
+
     return (
         <>
             <div className={classContainer}>
@@ -34,7 +49,10 @@ export default function PopUpSpent({ opacity, setOpacity, setShowSpent, showSpen
                         <FaArrowLeft className={styles.arrowIcon} onClick={offPopUp} />
                         <div className={styles.cardPopUp}>
                             <div className={styles.inputGasto}>
-                                <Input>Fonte de Gasto:</Input>
+                                <Input onChange={(e) => setValueInput(e.target.value)} >Fonte de Gasto:</Input>
+                            </div>
+                            <div className={styles.inputGasto}>
+                                <Input onChange={(e) => setValueDate(e.target.value)} >Data do Gasto:</Input>
                             </div>
                             <div className={styles.saleSpent}>
                                 <span>Ganho Líquido:</span>
@@ -62,7 +80,7 @@ export default function PopUpSpent({ opacity, setOpacity, setShowSpent, showSpen
 
                             </div>
                             <div className={styles.buttonAdd}>
-                                <Button version='greenBck' size='small'>
+                                <Button onClick={getData} version='greenBck' size='small'>
                                     <FaPlus style={{ fontSize: '20px' }} />
                                     Adicionar Renda
                                 </Button>

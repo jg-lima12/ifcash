@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import styles from './AddRenda.module.css'
-import { TitleProvider } from '../../context/IncomeContext/IncomeProvider';
 
 import { FaRegPlusSquare } from "react-icons/fa";
 import clsx from 'clsx';
@@ -9,15 +8,15 @@ import PopUpSpent from '../../layout/PopUpSpent/PopUpSpent';
 import PopUpIncome from '../../layout/PopUpIncome/PopUpIncome';
 
 import CardIncome from '../../layout/CardIncome/CardIncome';
+import CardSpent from '../../layout/CardSpent/CardSpent';
 
 export default function AddRenda() {
 
-    const [vetor, setVetor] = useState([])
+    const [vetorIncome, setVetorIncome] = useState([])
+    const [vetorSpent, setVetorSpent] = useState([])
 
     const [valueIcome, setValueIcome] = useState(10.99)
     const [valueSpent, setValueSpent] = useState(1.99)
-
-    const [valueCardIncome, setValueCardIncome] = useState()
 
     const [showIncome, setShowIncome] = useState(false)
     const [showOpacityIncome, setShowOpacityIncome] = useState(false)
@@ -39,11 +38,11 @@ export default function AddRenda() {
                         </div>
                         <div className={styles.listIcome}>
                             <div className={styles.listAddIcome}>
-                                {vetor.map((item, index) => (
+                                {vetorIncome.map((item, index) => (
                                     <CardIncome key={index} type={item.type} value={item.value} />
                                 ))}
 
-                                <PopUpIncome vetor={vetor} setVetor={setVetor} setValue={setValueCardIncome} opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
+                                <PopUpIncome vetor={vetorIncome} setVetor={setVetorIncome} opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
 
 
                             </div>
@@ -66,7 +65,12 @@ export default function AddRenda() {
                         </div>
                         <div className={styles.listIcome}>
                             <div className={styles.listAddIcome}>
+                                
+                                {vetorSpent.map((item, index) => (
+                                    <CardSpent key={index} type={item.type} value={item.value} date={item.date} />
+                                ))}
 
+                                <PopUpSpent setVetor={setVetorSpent} vetor={vetorSpent} opacity={showOpacitySpent} setOpacity={setShowOpacitySpent} setShowSpent={setShowSpent} showSpent={showSpent} />
                             </div>
                             <div className={styles.buttonListAdd}>
                                 <FaRegPlusSquare onClick={() => {
@@ -78,7 +82,7 @@ export default function AddRenda() {
                     </div>
                 </section>
             </div>
-            <PopUpSpent opacity={showOpacitySpent} setOpacity={setShowOpacitySpent} setShowSpent={setShowSpent} showSpent={showSpent} />
+
         </>
     )
 }

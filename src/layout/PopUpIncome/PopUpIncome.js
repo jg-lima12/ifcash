@@ -14,7 +14,7 @@ import { useEffect, useState } from 'react';
 import { useTitleContext } from '../../hooks/useIncomeContext';
 
 
-export default function PopUpIncome({ vetor, setVetor, setValue, opacity, setOpacity, setShowIncome, showIncome }) {
+export default function PopUpIncome({ vetor, setVetor, opacity, setOpacity, setShowIncome, showIncome }) {
 
     const classContainer = clsx(styles.container, !showIncome && styles.none, !opacity && styles.opacity)
 

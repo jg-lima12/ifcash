@@ -73,11 +73,7 @@ export default function PopUpIncome({ vetor, setVetor, opacity, setOpacity, setS
                                 <Input value={valueInput} onChange={(e) => setValueInput(e.target.value)} >Fonte de Renda:</Input>
                             </div>
                             <div className={styles.saleIncome}>
-                                <span>Ganho Líquido:</span>
-                                <div className={styles.valueFont}>
-                                    <span>R${valueFont}</span>
-                                    <LuPencil className={styles.iconPincel} style={{ fontSize: '40px', color: '#3ab914ff' }} onClick={showEditor} />
-                                </div>
+                                <Input value={valueFont} onChange={(e) => setValueFont(e.target.value)} >Ganho Liquído:</Input>
                             </div>
                             <div className={styles.alert}>
                                 <div className={styles.titleAlert}>

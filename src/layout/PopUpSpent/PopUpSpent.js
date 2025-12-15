@@ -15,7 +15,7 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
 
     const classContainer = clsx(styles.container, !showSpent && styles.none, !opacity && styles.opacity)
 
-    const [valueFont, setValueFont] = useState('00.00')
+    const [valueFont, setValueFont] = useState()
     const [valueInput, setValueInput] = useState('')
     const [valueDate, setValueDate] = useState('')
 
@@ -65,11 +65,7 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
                                 <Input value={valueDate} onChange={(e) => setValueDate(e.target.value)} >Data do Gasto:</Input>
                             </div>
                             <div className={styles.saleSpent}>
-                                <span>Ganho Líquido:</span>
-                                <div className={styles.valueFont}>
-                                    <span>R${valueFont}</span>
-                                    <LuPencil className={styles.iconPincel} style={{ fontSize: '40px', color: '#3ab914ff' }} onClick={showEditor} />
-                                </div>
+                                <Input value={valueFont} onChange={(e) => setValueFont(e.target.value)}>Ganho Líquido:</Input>
                             </div>
                             <div className={styles.categoria}>
                                 <span className={styles.titleCategoria}>Categoria</span>

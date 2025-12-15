@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './AddRenda.module.css'
 
 import { FaRegPlusSquare } from "react-icons/fa";
@@ -24,6 +24,16 @@ export default function AddRenda() {
     const [showSpent, setShowSpent] = useState(false)
     const [showOpacitySpent, setShowOpacitySpent] = useState(false)
 
+    useEffect(() => {
+        setValueSpent(
+            vetorSpent.reduce((acc, item) => acc + Number(item.value), 0
+        ))
+    }, [vetorSpent])
+
+    useEffect(() => {
+        setValueIcome(vetorIncome.reduce((acc, item) => acc + Number(item.value), 0)
+    )
+    } , [vetorIncome])
 
     return (
         <>

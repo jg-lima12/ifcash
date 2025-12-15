@@ -18,7 +18,7 @@ export default function PopUpIncome({ vetor, setVetor, opacity, setOpacity, setS
 
     const classContainer = clsx(styles.container, !showIncome && styles.none, !opacity && styles.opacity)
 
-    const [valueFont, setValueFont] = useState(99.99)
+    const [valueFont, setValueFont] = useState('00.00')
     const [valueLimit, setValueLimit] = useState(99.99)
     const [valueInput, setValueInput] = useState('')
 
@@ -43,12 +43,12 @@ export default function PopUpIncome({ vetor, setVetor, opacity, setOpacity, setS
     function getData() {
         setVetor([
             ...vetor, {
-                type: valueInput
+                type: valueInput,
+                value: valueFont,
             }])
         setValueInput('')
 
-        setOpacity(false)
-        setTimeout(() => setShowIncome(false), 100)
+        offPopUp()
     }
 
     useEffect((() => {

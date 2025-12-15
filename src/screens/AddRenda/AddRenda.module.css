@@ -54,10 +54,11 @@
 }
 
 .listIcome {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 28vw;
+    height: 65vh;
     box-shadow: 0px 0px 2px 2px black;
     margin-top: 15px;
     width: 100%;
@@ -99,5 +100,7 @@
 .iconPlus {
     font-size: 35px;
     margin-right: 10px;
+    position: absolute;
+    bottom: 10px;
 
 }

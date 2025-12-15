@@ -4,12 +4,18 @@ import styles from './CardIncome.module.css'
 import { FaRegTrashCan } from "react-icons/fa6";
 
 
-export default function CardIncome({type, value}) {
+export default function CardIncome({ setVetor, vetor, id, type, value }) {
+
+    function deleteCard() {
+        setVetor(() =>
+            vetor.filter((item, index) => index !== id)
+        )
+    }
 
     return (
         <>
             <div className={styles.container}>
-                <FaRegTrashCan className={styles.icon}/>
+                <FaRegTrashCan onClick={deleteCard} className={styles.icon} />
                 <div className={styles.card}>
                     <div className={styles.data}>
                         <span className={styles.titleData}>Fonte de Renda:</span>

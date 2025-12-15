@@ -37,6 +37,8 @@
 .data .fontData, .value .titleValue{
     font-size: 22px;
     font-weight: 250;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .value .numValue{

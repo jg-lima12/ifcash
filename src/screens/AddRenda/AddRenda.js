@@ -38,9 +38,9 @@ export default function AddRenda() {
                         </div>
                         <div className={styles.listIcome}>
                             <div className={styles.listAddIcome}>
-                                {vetorIncome.map((item, index) => (
-                                    <CardIncome key={index} type={item.type} value={item.value} />
-                                ))}
+                                {vetorIncome.map((item, index) => 
+                                   (<CardIncome vetor={vetorIncome} setVetor={setVetorIncome} key={index} id={index} type={item.type} value={item.value} /> )
+                                )}
 
                                 <PopUpIncome vetor={vetorIncome} setVetor={setVetorIncome} opacity={showOpacityIncome} setOpacity={setShowOpacityIncome} setShowIncome={setShowIncome} showIncome={showIncome} />
 
@@ -67,7 +67,7 @@ export default function AddRenda() {
                             <div className={styles.listAddIcome}>
                                 
                                 {vetorSpent.map((item, index) => (
-                                    <CardSpent key={index} type={item.type} value={item.value} date={item.date} />
+                                    <CardSpent key={index} id={index} setVetor={setVetorSpent} vetor={vetorSpent} type={item.type} value={item.value} date={item.date} />
                                 ))}
 
                                 <PopUpSpent setVetor={setVetorSpent} vetor={vetorSpent} opacity={showOpacitySpent} setOpacity={setShowOpacitySpent} setShowSpent={setShowSpent} showSpent={showSpent} />

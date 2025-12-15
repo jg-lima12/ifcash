@@ -15,17 +15,25 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
 
     const classContainer = clsx(styles.container, !showSpent && styles.none, !opacity && styles.opacity)
 
-    const [valueFont, setValueFont] = useState(99.99)
+    const [valueFont, setValueFont] = useState('00.00')
     const [valueInput, setValueInput] = useState('')
     const [valueDate, setValueDate] = useState('')
 
     function offPopUp() {
         setOpacity(false)
         setTimeout(() => setShowSpent(false), 100)
+
+        resetInput('')
+
     }
 
     function showEditor() {
 
+    }
+
+    function resetInput() {
+        setValueDate('')
+        setValueInput('')
     }
 
     function getData() {
@@ -38,6 +46,8 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
             }
         ])
 
+        resetInput()
+
         offPopUp()
     }
 
@@ -49,10 +59,10 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
                         <FaArrowLeft className={styles.arrowIcon} onClick={offPopUp} />
                         <div className={styles.cardPopUp}>
                             <div className={styles.inputGasto}>
-                                <Input onChange={(e) => setValueInput(e.target.value)} >Fonte de Gasto:</Input>
+                                <Input value={valueInput} onChange={(e) => setValueInput(e.target.value)} >Fonte de Gasto:</Input>
                             </div>
                             <div className={styles.inputGasto}>
-                                <Input onChange={(e) => setValueDate(e.target.value)} >Data do Gasto:</Input>
+                                <Input value={valueDate} onChange={(e) => setValueDate(e.target.value)} >Data do Gasto:</Input>
                             </div>
                             <div className={styles.saleSpent}>
                                 <span>Ganho Líquido:</span>

@@ -3,11 +3,18 @@ import styles from './CardSpent.module.css'
 import { FaRegTrashCan } from "react-icons/fa6";
 
 
-export default function CardSpent({ type, value, date }) {
+export default function CardSpent({ vetor, setVetor, id, type, value, date }) {
+
+    function deleteCard(){
+        setVetor(() => 
+            vetor.filter((item, index) => index !== id)
+        )
+    }
+
     return (
         <>
             <div className={styles.container}>
-                <FaRegTrashCan className={styles.icon} />
+                <FaRegTrashCan onClick={deleteCard} className={styles.icon} />
                 <div className={styles.card}>
                     <div className={styles.data}>
                         <div className={styles.title}>

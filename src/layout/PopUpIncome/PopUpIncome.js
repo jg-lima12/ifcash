@@ -30,7 +30,15 @@ export default function PopUpIncome({ vetor, setVetor, opacity, setOpacity, setS
     function offPopUp() {
         setOpacity(false)
         setTimeout(() => setShowIncome(false), 100)
+
+        resetInput()
     }
+
+     function resetInput() {
+        setValueInput('')
+        setValueFont('00.00')
+    }
+
 
     function showEditor() {
 
@@ -46,8 +54,8 @@ export default function PopUpIncome({ vetor, setVetor, opacity, setOpacity, setS
                 type: valueInput,
                 value: valueFont,
             }])
-        setValueInput('')
 
+        resetInput()
         offPopUp()
     }
 
@@ -101,7 +109,6 @@ export default function PopUpIncome({ vetor, setVetor, opacity, setOpacity, setS
                     </div>
                 </div>
             </div>
-            {console.log(valueInput)}
         </>
     )
 }

@@ -15,8 +15,8 @@ export default function AddRenda() {
     const [vetorIncome, setVetorIncome] = useState([])
     const [vetorSpent, setVetorSpent] = useState([])
 
-    const [valueIcome, setValueIcome] = useState(10.99)
-    const [valueSpent, setValueSpent] = useState(1.99)
+    const [valueIcome, setValueIcome] = useState('00.00')
+    const [valueSpent, setValueSpent] = useState('00.00')
 
     const [showIncome, setShowIncome] = useState(false)
     const [showOpacityIncome, setShowOpacityIncome] = useState(false)

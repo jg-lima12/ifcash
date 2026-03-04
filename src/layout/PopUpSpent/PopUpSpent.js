@@ -15,7 +15,7 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
 
     const classContainer = clsx(styles.container, !showSpent && styles.none, !opacity && styles.opacity)
 
-    const [valueFont, setValueFont] = useState()
+    const [valueFont, setValueFont] = useState('00.00')
     const [valueInput, setValueInput] = useState('')
     const [valueDate, setValueDate] = useState('')
 
@@ -34,6 +34,7 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
     function resetInput() {
         setValueDate('')
         setValueInput('')
+        setValueFont('00.00')
     }
 
     function getData() {
@@ -66,6 +67,9 @@ export default function PopUpSpent({ setVetor, vetor, opacity, setOpacity, setSh
                             </div>
                             <div className={styles.saleSpent}>
                                 <Input value={valueFont} onChange={(e) => setValueFont(e.target.value)}>Ganho Líquido:</Input>
+                            </div>
+                            <div>
+                                <Input type='date' styleInput={{width: '10vw'}}>Data do Gasto:</Input>
                             </div>
                             <div className={styles.categoria}>
                                 <span className={styles.titleCategoria}>Categoria</span>
